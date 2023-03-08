@@ -1,0 +1,188 @@
+/* Home component css to show individual sub-components clearly*/
+
+.topTeamComponent {
+  background-color: orange;
+}
+.topPlayersComponent {
+  background-color: cornflowerblue;
+}
+
+/* end of home components */
+
+/* webcam components styling */
+
+.mainWebcamContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 6vh;
+}
+
+.webCam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .webcamView {
+  /* border-radius: 50%;
+  /* border: 15px solid green; */
+/* display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 25px;
+
+  padding: 8px;
+  background-color: #00111f;
+  color: white;
+  border-color: rgba(0, 253, 255, 255);
+  border-width: 2px; */
+
+.accountMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.setNotificationPref {
+  text-align: center;
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.272);
+  padding: 5px;
+  width: 300px;
+}
+
+#captureBtn {
+  padding: 0.5rem;
+  margin: 0.7rem;
+}
+
+.webcamView {
+  border-radius: 50%;
+  /* border: 15px solid green; */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #00111f;
+  color: white;
+  border: 2px solid rgba(0, 253, 255, 255);
+  /* border-color: rgba(0, 253, 255, 255);
+  border-width: 2px; */
+}
+
+.controlBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 4rem;
+}
+
+#setAsAvatar {
+  padding: 0.5rem;
+  margin: 0.7rem;
+  width: 100px;
+}
+
+#overlay {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #00111f;
+  color: white;
+  border: 2px solid rgba(0, 253, 255, 255);
+}
+
+#clearPhoto {
+  padding: 0.5rem;
+  margin: 0.7rem;
+  width: 100px;
+}
+
+/* button styling */
+.submitButton {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+button {
+  border-radius: 26px;
+  padding: 8px;
+  background-color: #00111f;
+  color: white;
+  border-color: rgba(0, 253, 255, 255);
+  border-width: 2px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 10px rgba(0, 253, 255, 255);
+  cursor: pointer;
+}
+
+.linkHover:hover {
+  text-shadow: 0px 0px 10px rgba(0, 253, 255, 255);
+  cursor: pointer;
+}
+/* button styling end*/
+
+.setNotificationPref {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+
+.notificationToggle {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+  background-color: black;
+
+  /* border-radius: 25px; */
+  border: 2px solid rgba(0, 253, 255, 255);
+}
+
+.gkp,
+.fwd,
+.def,
+.mid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.offlineDisplay {
+  color: white;
+  font-size: 25px;
+  background-color: red;
+  text-align: center;
+  align-content: center;
+  width: 100%;
+}
+
+.spacingDiv,
+.teamStatsComponent,
+.teamName {
+  margin-top: 8vh;
+}
+
+.mainContainerUl {
+  margin-top: 9vh;
+}
+
+.forgot {
+  text-align: center;
+}
+
+.forgot:hover {
+  text-shadow: 0px 0px 10px rgba(0, 253, 255, 255);
+  cursor: pointer;
+}

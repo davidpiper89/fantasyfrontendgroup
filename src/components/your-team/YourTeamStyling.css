@@ -1,0 +1,265 @@
+/* side by side view */
+#user_team_selection_view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+/* pitch layout & size */
+#team_overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 70vh;
+  background-image: url("../../../public/assets/yourTeamImages/pitch.jpg");
+  background-size: 100% 70vh;
+  margin-top: 1rem;
+}
+.teamOverview {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* player position divs */
+.gkp,
+.fwd,
+.def,
+.mid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: column;
+}
+/* affects player as a whole */
+.players {
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+  height: 90px;
+  background-image: url("../../../public/assets/yourTeamImages/shirt.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  justify-content: center;
+}
+/* affects players sub items */
+.gkp p,
+.fwd p,
+.def p,
+.mid p {
+  margin: 0;
+}
+
+.playerName,
+.playerPosition {
+  font-size: 0.7rem;
+}
+.removeBtn {
+  padding: 5px 10px;
+  font-size: 0.5rem;
+  border-width: 1px;
+}
+
+.budget {
+  box-sizing: border-box;
+  width: 75vw;
+  padding: 5px;
+  text-align: center;
+}
+.budget p {
+  margin: 0;
+  padding: 5px;
+}
+
+/* player selection box */
+.playerSelection {
+  width: 100%;
+}
+.searchOptions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4vh;
+  width: 100%;
+}
+
+.inputName,
+.inputPlayer {
+  max-width: 150px;
+  height: 17px;
+  border: 2px solid transparent;
+  outline: none;
+  background-color: #002b4e;
+  padding: 8px;
+  transition: 0.5s linear;
+  border: 1px solid rgba(0, 253, 255, 255);
+  color: white;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  margin: 5px;
+}
+.playerSearch input {
+  width: 110px;
+}
+
+input::placeholder {
+  color: white;
+}
+input:focus::placeholder {
+  color: rgb(176, 176, 176);
+}
+/* select box styling */
+select {
+  background-color: #002b4e;
+  border: 1px solid rgba(0, 253, 255, 255);
+  color: white;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  margin: 5px;
+  padding: 8px;
+}
+
+#team_name {
+  width: 250px;
+  height: 100px;
+  background-color: black;
+}
+#userpage_playerlist {
+  overflow: auto;
+  margin-top: 1vh;
+  height: 50vh;
+}
+/* whole table */
+.yourTeamTable {
+  background-color: #002b4e;
+}
+/* table header */
+.yourTeamTable thead {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* table data */
+.yourTeamTable td {
+  background-color: #002b4e;
+  height: 1rem;
+  text-align: center;
+}
+
+/* table data text */
+.yourTeamTable td p {
+  margin: 0;
+  padding: 3px;
+}
+.playerCol p {
+  width: 83px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+table button {
+  padding: 2px 8px;
+}
+.playersTypeGroup {
+  display: flex;
+  justify-content: space-evenly;
+  height: 80px;
+}
+.typeHeader {
+  font-size: 0.8rem;
+}
+.teamName {
+  font-size: 2rem;
+  text-align: center;
+}
+.chooseTeamName {
+  height: 44px;
+  margin-top: 4vh;
+}
+
+.TeamErrorContainer {
+  background-color: rgb(10, 10, 120);
+  border: solid;
+  border-radius: 1rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  width: 18rem;
+  text-align: center;
+}
+.BudgetAndSaveContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 48vw;
+}
+.budget {
+  width: 10rem;
+  background-color: rgb(5, 5, 80);
+  border: solid;
+  margin-right: 4rem;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.saveButtonContainer {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .players {
+    width: 110px;
+    height: 110px;
+  }
+  .players div {
+    padding: 5px;
+  }
+  .playerName {
+    font-size: 1rem;
+  }
+  .removeBtn {
+    font-size: 0.8rem;
+  }
+
+  .playerCol p {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #user_team_selection_view {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  #team_overview {
+    width: 48vw;
+    height: 65vh;
+    background-size: 48vw 65vh;
+    margin-top: 0.5rem;
+  }
+  .playerSelection {
+    width: 48vw;
+    height: 65vh;
+  }
+  #userpage_playerlist {
+    height: 65vh;
+  }
+  .TeamErrorContainer {
+    width: 20rem;
+  }
+  .budget {
+    width: 15rem;
+    margin-right: 0;
+  }
+}

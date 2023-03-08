@@ -1,0 +1,9 @@
+/* CONTAINER FOR FOOTER  */
+.footerFlexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 4vh;
+  margin-top: 1.5rem;
+}

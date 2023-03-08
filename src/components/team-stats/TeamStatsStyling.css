@@ -1,0 +1,72 @@
+.teams h3,
+.games h4,
+.strength h4,
+.strengthStats {
+  text-align: center;
+  margin: 0;
+}
+.teamStatsContainer p {
+  margin: 0;
+}
+.teamHeadline,
+.gameStats,
+.strengthStats {
+  display: flex;
+  justify-content: space-around;
+}
+.teams,
+.games,
+.strength,
+.teamStatsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.bold {
+  font-weight: bolder;
+}
+.teams div {
+  margin: 5px 10px;
+}
+
+.teamSelect {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.teamStatsContainer {
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.strength,
+.games,
+.teamHeadline {
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgba(0, 253, 255, 255);
+  padding: 5px;
+  border-width: 1px;
+}
+.teams {
+  margin: 10px;
+  width: 350px;
+}
+
+.teamLogo img {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.teamLogo {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .teams {
+    margin: 10px;
+    width: 700px;
+  }
+}

@@ -1,0 +1,309 @@
+body {
+  background-color: rgb(0, 17, 31);
+  color: white;
+}
+header {
+  margin: 1rem;
+}
+main {
+  margin-top: 5rem;
+}
+
+/* PROMO COMPONENT  */
+.promoComponent {
+  color: white;
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  background-image: url("../../../public/assets/homeImages/stadiumNight.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* LOGIN COMPONENT */
+.loginComponent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem;
+}
+
+.userInputFlexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.272);
+  padding: 5px;
+  width: 300px;
+}
+
+/* login/signin form style */
+.inputbox {
+  position: relative;
+  width: 250px;
+  margin: 30px 0px;
+}
+
+.inputbox input {
+  position: relative;
+  width: 250px;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: black;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 20px 10px 10px;
+  color: rgb(210, 235, 235);
+  transition: 0.5s;
+  pointer-events: none;
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: rgba(0, 253, 255, 255);
+  transform: translateX(-10px) translateY(-45px);
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 253, 255, 255);
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:required:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+
+/* NEON TEXT TEMPLATE  */
+.neonText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 0 0 6px black, 0 0 10px rgba(0, 186, 234, 255),
+    0 0 21px rgba(0, 186, 234, 255), 0 0 20px rgba(0, 249, 252, 255),
+    0 0 40px rgba(0, 157, 209, 255), 0 0 80px rgba(0, 157, 209, 255),
+    0 0 80px rgba(0, 157, 209, 255), 0 0 50px rgba(0, 253, 255, 255);
+}
+/* FLICKER  */
+.neonLightFlicker {
+  --interval: 1s;
+  display: block;
+  text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
+    0 0 40px var(--color3), 0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 0.5s infinite;
+}
+
+.neonLightFlicker:nth-of-type(1) {
+  color: rgb(251, 251, 251);
+  --color1: rgb(146, 176, 202);
+  --color2: rgb(98, 134, 160);
+  --color3: rgb(43, 81, 113);
+  --color4: rgb(13, 51, 81);
+}
+
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+.topTeamComponent {
+  background-color: rgb(0, 17, 31);
+}
+
+.topTeamHeaderContainer {
+  border: solid;
+  border-radius: 1rem;
+  border-color: white;
+  text-align: center;
+  margin: 2rem;
+  background-color: #002b4e;
+  margin-top: 5rem;
+}
+
+.topTeamContainer {
+  font-size: 1.5rem;
+}
+
+.topPlayersTitleContainer {
+  border: solid;
+  border-radius: 1rem;
+  text-align: center;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.topPlayersHeader {
+  font-size: 50px;
+  font-style: oblique;
+}
+
+.topTeamHeader {
+  font-size: 50px;
+  font-style: italic;
+}
+
+.topPlayersComponent {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #002b4e;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.topPlayerCategoryHeader {
+  font-size: 25px;
+  font-style: oblique;
+}
+
+.individualPlayerContainer {
+  margin-bottom: 2rem;
+  border-bottom: solid;
+  font-size: 1.1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.topPlayerCategoryContainer {
+  border-radius: 1rem;
+  border: 1rem;
+  border-color: white;
+  border: solid;
+  margin-bottom: 2rem;
+  width: 15rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.topDefendersContainer,
+.topGoalkeepersContainer,
+.topMidfieldersContainer,
+.topForwardsContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.userLeagueTable {
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+td {
+  width: 15rem;
+  background-color: #002b4e;
+  height: 5rem;
+}
+
+/* Card Links */
+.cardLinksComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  height: 20vh;
+  width: 100%;
+  margin: 10px 0;
+  justify-content: center;
+}
+
+.yourTeam {
+  background-image: url("../../../public/assets/homeImages/footballPlayer.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.yourLeagueTable {
+  background-image: url("../../../public/assets/homeImages/footballTrophy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.teamStats {
+  background-image: url("../../../public/assets/homeImages/footballGoal.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.yourAccount {
+  background-image: url("../../../public/assets/homeImages/footballBoots.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+.cardGroup {
+  width: 100%;
+}
+
+/* TOP MARGIN ON WELCOME H1 TO PUSH UP */
+.welcomeToFFText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: start;
+}
+
+@media screen and (min-width: 768px) {
+  .card {
+    height: 25vh;
+  }
+  .card h2 {
+    font-size: 2rem;
+  }
+}
+
+/* SPLASH SCREEN */
+.splashScreen {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadowForSpashScreen {
+  text-shadow: 2px 6px 2px black;
+}
