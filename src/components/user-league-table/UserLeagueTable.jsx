@@ -6,12 +6,15 @@ const UserLeagueTable = () => {
   const userLeagueTable = useSelector(
     (football) => football.football.userLeagueTable
   );
-  function sort (a, b ) {
-    if ((a.total_points - a.score_deduction) < (b.total_points - b.score_deduction)){
-      return -1;
-    }
-  }
-
+  console.log(userLeagueTable);
+  // function sort(a, b) {
+  //   if (
+  //     a.total_points - a.score_deduction <
+  //     b.total_points - b.score_deduction
+  //   ) {
+  //     return -1;
+  //   }
+  // }
 
   return (
     <>
@@ -40,8 +43,7 @@ const UserLeagueTable = () => {
                 </td>
                 <td>
                   {userLeagueTable[0]
-                    ? userLeagueTable[0].total_points -
-                      userLeagueTable[0].score_deduction
+                    ? userLeagueTable[0].total_points 
                     : "no entry"}
                 </td>
               </tr>
@@ -54,8 +56,7 @@ const UserLeagueTable = () => {
                 </td>
                 <td>
                   {userLeagueTable[1]
-                    ? userLeagueTable[1].total_points -
-                      userLeagueTable[1].score_deduction
+                    ? userLeagueTable[1].total_points 
                     : "no entry"}
                 </td>
               </tr>
@@ -68,8 +69,7 @@ const UserLeagueTable = () => {
                 </td>
                 <td>
                   {userLeagueTable[2]
-                    ? userLeagueTable[2].total_points -
-                      userLeagueTable[2].score_deduction
+                    ? userLeagueTable[2].total_points 
                     : "no entry"}
                 </td>
               </tr>
@@ -82,8 +82,7 @@ const UserLeagueTable = () => {
                 </td>
                 <td>
                   {userLeagueTable[3]
-                    ? userLeagueTable[3].total_points -
-                      userLeagueTable[3].score_deduction
+                    ? userLeagueTable[3].total_points
                     : "no entry"}
                 </td>
               </tr>
@@ -96,8 +95,7 @@ const UserLeagueTable = () => {
                 </td>
                 <td>
                   {userLeagueTable[4]
-                    ? userLeagueTable[4].total_points -
-                      userLeagueTable[4].score_deduction
+                    ? userLeagueTable[4].total_points
                     : "no entry"}
                 </td>
               </tr>

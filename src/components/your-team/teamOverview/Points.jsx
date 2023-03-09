@@ -20,7 +20,7 @@ const Points = () => {
   setInterval(async () => {
     const results = await getData("updateScore", grossPoints);
     console.log(results);
-  }, 100000000);
+  }, 1000);
 
   return <h1>Points : {scoreDeduction ? grossPoints - scoreDeduction : 0}</h1>;
 };
