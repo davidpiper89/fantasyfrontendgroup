@@ -6,6 +6,7 @@ const FilteredTeams = () => {
   const teams = useSelector(selectTeams);
   const result = teams.filter((team) => team.name === sortTeam);
 
+
   return (
     <>
       {result.map((item) => {

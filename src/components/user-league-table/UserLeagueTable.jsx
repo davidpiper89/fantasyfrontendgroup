@@ -6,15 +6,10 @@ const UserLeagueTable = () => {
   const userLeagueTable = useSelector(
     (football) => football.football.userLeagueTable
   );
-  console.log(userLeagueTable);
-  // function sort(a, b) {
-  //   if (
-  //     a.total_points - a.score_deduction <
-  //     b.total_points - b.score_deduction
-  //   ) {
-  //     return -1;
-  //   }
-  // }
+
+  const copy = [...userLeagueTable];
+  const sorted = copy.sort((a, b) => (a.total_points < b.total_points ? 1 : -1));
+
 
   return (
     <>
@@ -36,68 +31,28 @@ const UserLeagueTable = () => {
             <tbody>
               <tr>
                 <td>1</td>
-                <td>
-                  {userLeagueTable[0]
-                    ? userLeagueTable[0].team_name
-                    : "no entry"}
-                </td>
-                <td>
-                  {userLeagueTable[0]
-                    ? userLeagueTable[0].total_points 
-                    : "no entry"}
-                </td>
+                <td>{sorted[0] ? sorted[0].team_name : "no entry"}</td>
+                <td>{sorted[0] ? sorted[0].total_points : "no entry"}</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>
-                  {userLeagueTable[1]
-                    ? userLeagueTable[1].team_name
-                    : "no entry"}
-                </td>
-                <td>
-                  {userLeagueTable[1]
-                    ? userLeagueTable[1].total_points 
-                    : "no entry"}
-                </td>
+                <td>{sorted[1] ? sorted[1].team_name : "no entry"}</td>
+                <td>{sorted[1] ? sorted[1].total_points : "no entry"}</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>
-                  {userLeagueTable[2]
-                    ? userLeagueTable[2].team_name
-                    : "no entry"}
-                </td>
-                <td>
-                  {userLeagueTable[2]
-                    ? userLeagueTable[2].total_points 
-                    : "no entry"}
-                </td>
+                <td>{sorted[2] ? sorted[2].team_name : "no entry"}</td>
+                <td>{sorted[2] ? sorted[2].total_points : "no entry"}</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>
-                  {userLeagueTable[3]
-                    ? userLeagueTable[3].team_name
-                    : "no entry"}
-                </td>
-                <td>
-                  {userLeagueTable[3]
-                    ? userLeagueTable[3].total_points
-                    : "no entry"}
-                </td>
+                <td>{sorted[3] ? sorted[3].team_name : "no entry"}</td>
+                <td>{sorted[3] ? sorted[3].total_points : "no entry"}</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>
-                  {userLeagueTable[4]
-                    ? userLeagueTable[4].team_name
-                    : "no entry"}
-                </td>
-                <td>
-                  {userLeagueTable[4]
-                    ? userLeagueTable[4].total_points
-                    : "no entry"}
-                </td>
+                <td>{sorted[4] ? sorted[4].team_name : "no entry"}</td>
+                <td>{sorted[4] ? sorted[4].total_points : "no entry"}</td>
               </tr>
             </tbody>
           </table>

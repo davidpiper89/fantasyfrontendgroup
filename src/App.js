@@ -37,7 +37,7 @@ const App = () => {
         const syncData = await getData("syncData", token);
         dispatch(setSyncData(syncData));
       }
-    }, 1000000);
+    }, 10000);
   }, [dispatch]);
 
   useEffect(() => {
