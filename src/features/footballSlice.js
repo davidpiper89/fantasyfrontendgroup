@@ -14,6 +14,15 @@ export const footballSlice = createSlice({
       state.selectedTeam = [];
       state.token = "";
     },
+
+    // Set the football data
+    setFootballApiData: (state, action) => {
+      const { elements, teams, element_types } = action.payload;
+      state.footballData.elements = elements;
+      state.footballData.teams = teams;
+      state.footballData.element_types = element_types;
+    },
+
     // Set the user's fantasy team name
     setTeamName: (state, action) => {
       state.user.fantasy.teamName = action.payload;

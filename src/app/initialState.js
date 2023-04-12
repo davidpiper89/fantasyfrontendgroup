@@ -1,5 +1,5 @@
 import { GKP, MID, FWD, DEF } from "../app/types";
-import { data } from "./sampleData";
+// import { data } from "./sampleData";
 import { retrieve } from "../utils/storage";
 
 const store = retrieve("store");
@@ -19,9 +19,9 @@ export const initialState = store || {
   scoreDeduction: "",
   isLoggedIn: false,
   footballData: {
-    elements: [...data.elements],
-    teams: [...data.teams],
-    element_types: [...data.element_types],
+    elements: "",
+    teams: "",
+    element_types: "",
   },
   user: {
     userName: "",
