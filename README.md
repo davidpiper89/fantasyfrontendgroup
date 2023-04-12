@@ -1,46 +1,76 @@
-# Getting Started with Create React App and Redux
+# Fantasy Football Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project is a frontend implementation for a fantasy football web application built using React, Redux, and other associated libraries. The application allows users to create, manage, and view their fantasy football teams, as well as view statistics, team standings, and player information.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+_git clone https://github.com/davidpiper89/fantasyfrontendgroup.git_
 
-### `npm test`
+2. Navigate to the project folder:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_cd fantasyfrontendgroup_
 
-### `npm run build`
+3. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_npm install_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_npm start_
 
-### `npm run eject`
+The application will be accessible at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Sign Up and Login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Users can sign up for an account and log in to access the application's features. After logging in, users can manage their fantasy football teams, view statistics, and interact with the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Home Page
 
-## Learn More
+The home page provides an overview of the user's fantasy football team, displaying information such as team name, players, and total points.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Account Page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The account page allows users to manage their account settings, such as updating their email address, changing their password, and selecting an avatar.
+
+### Your Team Page
+
+The "Your Team" page allows users to create and manage their fantasy football team. Users can add and remove players, view player statistics, and save their team lineup.
+
+### User League Table Page
+
+The "User League Table" page displays the standings of all the users in the fantasy football league. Users can view their position, total points, and other relevant information.
+
+### Team Stats Page
+
+The "Team Stats" page provides detailed statistics about each team in the league, including the number of goals scored, assists, and clean sheets.
+
+### Components
+
+The project is organized into several components, including the header, footer, home, account, your-team, user-league-table, team-stats, and modal components. Each component is responsible for rendering a specific part of the application.
+
+### State Management
+
+Redux is used for state management, with a `footballSlice` managing the global state of the application. This slice contains actions, reducers, and selectors for managing user data, football data, and other application state.
+
+## Features
+
+- User account management (sign up, login, update settings)
+- Fantasy football team creation and management
+- Detailed player and team statistics
+- League standings and information
+- Responsive design
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
