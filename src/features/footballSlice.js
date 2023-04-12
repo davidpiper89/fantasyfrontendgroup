@@ -121,7 +121,6 @@ export const footballSlice = createSlice({
     },
     // Set synchronized data from the server
     setSyncData: (state, { payload }) => {
-      console.log(payload.selectedTeam);
       state.user = { ...state.user, ...payload.user };
       state.userLeagueTable = payload.fantasyTable;
       if (payload.selectedTeam === []) {

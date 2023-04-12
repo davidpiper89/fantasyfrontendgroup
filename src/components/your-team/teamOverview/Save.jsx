@@ -9,7 +9,6 @@ const Save = () => {
 
   // Save the team to the database
   const saveDBTeam = async (dBTeam, scoreDeduction) => {
-    console.log("iran");
     const usersTeam = await getData("saveTeam", {
       teamName,
       dBTeam,
