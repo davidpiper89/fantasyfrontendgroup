@@ -4,10 +4,17 @@ import { setModal } from "../../../features/footballSlice";
 
 const Save = () => {
   const dispatch = useDispatch();
-  const saveTeam = useSelector((state) => state.football.selectedTeam);
+  const selectedTeam = useSelector((state) => state.football.selectedTeam);
+  const teamName = useSelector((state) => state.football.user.fantasy.teamName);
 
+  // Save the team to the database
   const saveDBTeam = async (dBTeam, scoreDeduction) => {
-    const usersTeam = await getData("saveTeam", { dBTeam, scoreDeduction });
+    console.log("iran");
+    const usersTeam = await getData("saveTeam", {
+      teamName,
+      dBTeam,
+      scoreDeduction,
+    });
     if (usersTeam.status === 1) {
       dispatch(setModal("team saved"));
     } else {
@@ -15,30 +22,34 @@ const Save = () => {
     }
   };
 
+  // Prepare the team data and call saveDBTeam
   const setSavedTeam = (team) => {
-    const startingScoreArray = [];
-    const dBTeam = [];
     if (team.length < 11) {
       return dispatch(setModal("Please select 11 players"));
-    } else {
-      team.map((player) =>
-        dBTeam.push({ code: player.code, position: player.element_type })
-      );
-      team.map((player) => startingScoreArray.push(player.total_points));
+    }
 
-      const scoreDeduction = startingScoreArray.reduce((a, b) => {
-        return a + b;
-      }, 0);
+    if (!teamName) {
+      dispatch(setModal("Please Select Team Name"));
+    } else {
+      const dBTeam = team.map((player) => ({ code: player.code }));
+      const scoreDeduction = calculateScoreDeduction(team);
 
       saveDBTeam(dBTeam, scoreDeduction);
     }
+  };
+
+  // Calculate the score deduction from the team
+  const calculateScoreDeduction = (team) => {
+    return team.reduce((accumulator, player) => {
+      return accumulator + player.total_points;
+    }, 0);
   };
 
   return (
     <>
       <button
         onClick={() => {
-          setSavedTeam(saveTeam);
+          setSavedTeam(selectedTeam);
         }}
       >
         Save Team

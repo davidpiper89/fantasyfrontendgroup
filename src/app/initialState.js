@@ -30,6 +30,7 @@ export const initialState = store || {
     notificationEmails: "",
     fantasy: {
       teamName: "",
+      confirmedTeamName: "",
       lineUp: [
         { playerId: 1, position: GKP },
         { playerId: 2, position: DEF },

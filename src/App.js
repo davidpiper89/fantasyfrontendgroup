@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Account from "./components/account/Account";
@@ -11,6 +12,7 @@ import TeamStats from "./components/team-stats/TeamStats";
 import Footer from "./components/footer/Footer";
 import Modal from "./components/modal/Modal";
 import Forgot from "./components/home/notLoggedIn/inputBoxes/Forgot";
+
 import { getData } from "./api";
 import {
   selectToken,
@@ -28,21 +30,26 @@ const App = () => {
     if (results.status === 1) {
       dispatch(setFootballApiData(results.footballData));
     }
-
-    setInterval(async () => {
-      if (token) {
-        console.log("getting new data.");
-        //get the latest data from the server
-
-        const syncData = await getData("syncData", token);
-        dispatch(setSyncData(syncData));
-      }
-    }, 10000);
   }, [dispatch]);
+
+  const syncData = useCallback(async () => {
+    if (token) {
+      console.log("getting new data.");
+      const syncDataResponse = await getData("syncData", token);
+      dispatch(setSyncData(syncDataResponse));
+    }
+  }, [dispatch, token]);
 
   useEffect(() => {
     getFootballData();
   }, [getFootballData]);
+
+  useEffect(() => {
+    const intervalId = setInterval(syncData, 20000);
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [syncData]);
 
   return (
     <>

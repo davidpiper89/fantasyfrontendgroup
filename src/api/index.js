@@ -29,19 +29,6 @@ export const getData = async (type, payload) => {
       return data;
     }
 
-    case "updateTeamName": {
-      const data = await getApiData(
-        "post",
-        `${apiURL}/updateTeamName`,
-        {
-          teamName: payload.teamName,
-        },
-        { headers: { token: football.token } }
-      );
-
-      return data;
-    }
-
     case "updateUserImage": {
       const data = await getApiData(
         "post",
@@ -57,16 +44,16 @@ export const getData = async (type, payload) => {
 
     case "saveTeam": {
       const data = await getApiData(
-        "put",
+        "post",
         `${apiURL}/save`,
         {
-          dBTeam: payload.dBTeam,
-          scoreDeduction: payload.scoreDeduction,
+          payload: payload
         },
         { headers: { token: football.token } }
       );
       return data;
     }
+
     case "forgotPassword": {
       const data = await getApiData("patch", `${apiURL}/forgot`, {
         email: payload.email,
@@ -96,7 +83,7 @@ export const getData = async (type, payload) => {
         "put",
         `${apiURL}/points`,
         {
-          payload,
+          payload: payload,
         },
         { headers: { token: football.token } }
       );

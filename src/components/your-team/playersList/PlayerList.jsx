@@ -18,6 +18,7 @@ const PlayerList = () => {
     (football) => football.football.selectedTeam
   );
 
+
   // put list of players from store into local state
   // const [data, setdata] = useState([...players]);
   let data = [...players];
