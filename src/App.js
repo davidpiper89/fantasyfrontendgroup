@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
+// Import components
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Account from "./components/account/Account";
@@ -13,6 +14,7 @@ import Footer from "./components/footer/Footer";
 import Modal from "./components/modal/Modal";
 import Forgot from "./components/home/notLoggedIn/inputBoxes/Forgot";
 
+// Import API call and Redux actions
 import { getData } from "./api";
 import {
   selectToken,
@@ -24,6 +26,7 @@ const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
 
+  // Fetch football data from API and update Redux store
   const getFootballData = useCallback(async () => {
     const results = await getData("getFootballData");
 
@@ -32,6 +35,7 @@ const App = () => {
     }
   }, [dispatch]);
 
+  // Sync data based on user token and update Redux store
   const syncData = useCallback(async () => {
     if (token) {
       console.log("getting new data.");
@@ -40,10 +44,12 @@ const App = () => {
     }
   }, [dispatch, token]);
 
+  // Fetch football data on component mount
   useEffect(() => {
     getFootballData();
   }, [getFootballData]);
 
+  // Sync data every 20 seconds
   useEffect(() => {
     const intervalId = setInterval(syncData, 20000);
     return () => {
@@ -58,6 +64,7 @@ const App = () => {
           <Header />
         </header>
         <main>
+          {/* Define routes and their corresponding components */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/account" element={<Account />} />
