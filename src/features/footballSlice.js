@@ -132,7 +132,7 @@ export const footballSlice = createSlice({
     setSyncData: (state, { payload }) => {
       state.user = { ...state.user, ...payload.user };
       state.userLeagueTable = payload.fantasyTable;
-      if (payload.selectedTeam === []) {
+      if (state.selectedTeam.length === 0) {
         state.selectedTeam = payload.selectedTeam;
       }
       store("store", state);

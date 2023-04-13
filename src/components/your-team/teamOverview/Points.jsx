@@ -7,7 +7,6 @@ const useUpdateScore = (grossPoints) => {
   useEffect(() => {
     const interval = setInterval(async () => {
       const results = await getData("updateScore", grossPoints);
-      console.log(grossPoints);
 
       if (results.status === 1) {
         console.log("scores updated");
