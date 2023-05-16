@@ -2,39 +2,33 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getData } from "../../../api";
 
-// Custom hook to update scores every 20 seconds
-const useUpdateScore = (grossPoints) => {
-  useEffect(() => {
-    const interval = setInterval(async () => {
-      const results = await getData("updateScore", grossPoints);
-
-      if (results.status === 1) {
-        console.log("scores updated");
-      } else {
-        console.log("scores not updated");
-      }
-    }, 20000);
-
-    // Clean up the interval when the component unmounts
-    return () => {
-      clearInterval(interval);
-    };
-  }, [grossPoints]);
-};
-
 const Points = () => {
-  const selectedTeam = useSelector((state) => state.football.selectedTeam);
-  const scoreDeduction = useSelector((state) => state.football.scoreDeduction);
+  const { selectedTeam, scoreDeduction } = useSelector((state) => ({
+    selectedTeam: state.football.selectedTeam,
+    scoreDeduction: state.football.scoreDeduction,
+  }));
 
-  // Calculate gross points
-  const grossPoints = selectedTeam.reduce((accumulator, player) => {
-    return accumulator + player.total_points;
-  }, 0);
+  useEffect(() => {
+    // Calculate gross points
+    const grossPoints = selectedTeam.reduce((accumulator, player) => {
+      return accumulator + player.total_points;
+    }, 0);
 
-  // Call custom hook to update scores
-  useUpdateScore(grossPoints);
+    // Set points
+    const setPoints = async () => {
+      await getData("updateScore", grossPoints);
+    };
 
-  return <h1>Points: {scoreDeduction ? grossPoints - scoreDeduction : 0}</h1>;
+    setPoints();
+  }, [selectedTeam]);
+
+  // Calculate net points
+  const netPoints =
+    selectedTeam.reduce((accumulator, player) => {
+      return accumulator + player.total_points;
+    }, 0) - (scoreDeduction || 0);
+
+  return <h1>Points: {netPoints}</h1>;
 };
 
 export default Points;

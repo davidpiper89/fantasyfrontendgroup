@@ -49,9 +49,15 @@ const App = () => {
     getFootballData();
   }, [getFootballData]);
 
-  // Sync data every 20 seconds
+  // Sync data on component mount and every 20 seconds
   useEffect(() => {
+    // Call syncData immediately on component mount
+    syncData();
+
+    // Set up interval to call syncData every 20 seconds
     const intervalId = setInterval(syncData, 20000);
+
+    // Clean up interval on component unmount
     return () => {
       clearInterval(intervalId);
     };

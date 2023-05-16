@@ -131,10 +131,11 @@ export const footballSlice = createSlice({
     // Set synchronized data from the server
     setSyncData: (state, { payload }) => {
       state.user = { ...state.user, ...payload.user };
-      state.userLeagueTable = payload.fantasyTable;
+      state.scoreDeduction = payload.scoreDeduction.score_deduction;
       if (state.selectedTeam.length === 0) {
         state.selectedTeam = payload.selectedTeam;
       }
+      state.userLeagueTable = payload.table;
       store("store", state);
     },
   },

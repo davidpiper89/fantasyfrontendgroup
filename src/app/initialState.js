@@ -40,4 +40,5 @@ export const initialState = store || {
       lastUpdateDate: Date.now(),
     },
   },
+  userLeagueTable: "",
 };
