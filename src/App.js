@@ -20,6 +20,7 @@ import {
   selectToken,
   setFootballApiData,
   setSyncData,
+  setSavedSquad,
 } from "./features/footballSlice";
 
 const App = () => {
@@ -40,6 +41,9 @@ const App = () => {
     if (token) {
       console.log("getting new data.");
       const syncDataResponse = await getData("syncData", token);
+      if (syncDataResponse.selectedTeam[0]) {
+        dispatch(setSavedSquad());
+      }
       dispatch(setSyncData(syncDataResponse));
     }
   }, [dispatch, token]);

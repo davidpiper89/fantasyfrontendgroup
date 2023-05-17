@@ -6,6 +6,7 @@ const Save = () => {
   const dispatch = useDispatch();
   const selectedTeam = useSelector((state) => state.football.selectedTeam);
   const teamName = useSelector((state) => state.football.user.fantasy.teamName);
+  const saved = useSelector((state) => state.football.savedSquad);
 
   // Save the team to the database
   const saveDBTeam = async (dBTeam, scoreDeduction) => {
@@ -46,13 +47,15 @@ const Save = () => {
 
   return (
     <>
-      <button
-        onClick={() => {
-          setSavedTeam(selectedTeam);
-        }}
-      >
-        Save Team
-      </button>
+      {!saved && (
+        <button
+          onClick={() => {
+            setSavedTeam(selectedTeam);
+          }}
+        >
+          Save Team
+        </button>
+      )}
     </>
   );
 };

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Name from "./Name";
 import Remove from "./Remove";
 
-const PlayerType = ({ type, players }) => (
+const PlayerType = ({ type, players, saved }) => (
   <div className={type}>
     <p className="typeHeader neonText">
       {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -11,7 +11,7 @@ const PlayerType = ({ type, players }) => (
       {players.map((player) => (
         <div key={player.code} className="players">
           <Name name={player.web_name} />
-          <Remove code={player.code} />
+          {!saved && <Remove code={player.code} />}
         </div>
       ))}
     </div>
@@ -19,8 +19,7 @@ const PlayerType = ({ type, players }) => (
 );
 
 const SelectedPlayer = () => {
-  const saved = useSelector((state) => state.football.savedTeam);
-  console.log(saved);
+  const saved = useSelector((state) => state.football.savedSquad);
 
   const teamPlayers = useSelector((state) => state.football.selectedTeam);
 
@@ -33,7 +32,7 @@ const SelectedPlayer = () => {
   return (
     <>
       {Object.entries(players).map(([type, players]) => (
-        <PlayerType key={type} type={type} players={players} />
+        <PlayerType key={type} type={type} players={players} saved={saved} />
       ))}
     </>
   );
