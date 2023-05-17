@@ -5,4 +5,7 @@ export const store = configureStore({
   reducer: {
     football: footballReducer,
   },
+  devTools: {
+    maxAge: 25,
+  },
 });

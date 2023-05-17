@@ -15,6 +15,7 @@ export const initialState = store || {
   sortTeam: "",
   currentPlayer: "",
   selectedTeam: [],
+  savedSquad: false,
   points: "",
   scoreDeduction: "",
   isLoggedIn: false,

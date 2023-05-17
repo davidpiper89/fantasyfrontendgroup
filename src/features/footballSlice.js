@@ -138,6 +138,9 @@ export const footballSlice = createSlice({
       state.userLeagueTable = payload.table;
       store("store", state);
     },
+    setSavedSquad: (state) => {
+      state.savedSquad = true;
+    },
   },
 });
 
@@ -170,6 +173,7 @@ export const {
   setToken,
   setSyncData,
   resetStore,
+  setSavedSquad,
 } = footballSlice.actions;
 
 // Export selectors

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../../../api";
-import { setModal } from "../../../features/footballSlice";
+import { setModal, setSavedSquad } from "../../../features/footballSlice";
 
 const Save = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const Save = () => {
     } else {
       const dBTeam = team.map((player) => ({ code: player.code }));
       const scoreDeduction = calculateScoreDeduction(team);
-
+      dispatch(setSavedSquad());
       saveDBTeam(dBTeam, scoreDeduction);
     }
   };
