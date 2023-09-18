@@ -2,8 +2,6 @@ import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-
-// Import components
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Account from "./components/account/Account";
@@ -13,8 +11,6 @@ import TeamStats from "./components/team-stats/TeamStats";
 import Footer from "./components/footer/Footer";
 import Modal from "./components/modal/Modal";
 import Forgot from "./components/home/notLoggedIn/inputBoxes/Forgot";
-
-// Import API call and Redux actions
 import { getData } from "./api";
 import {
   selectToken,
@@ -74,7 +70,6 @@ const App = () => {
           <Header />
         </header>
         <main>
-          {/* Define routes and their corresponding components */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/account" element={<Account />} />

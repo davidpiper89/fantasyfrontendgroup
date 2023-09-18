@@ -70,7 +70,3 @@ Redux is used for state management, with a `footballSlice` managing the global s
 - Detailed player and team statistics
 - League standings and information
 - Responsive design
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
